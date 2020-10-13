@@ -2,16 +2,27 @@
 {
     public class Invoker
     {
-        private ICommand sequenceCommand;
+        private ICommand directionCommand;
+        private ICommand unlockCommand;
 
-        public void SetSequenceCommand(ICommand command)
+        public void SetDirectionCommand(ICommand command)
         {
-            sequenceCommand = command;
+            directionCommand = command;
         }
 
-        public void FollowCommandSequence()
+        public void SetUnlockCommand(ICommand command)
         {
-            sequenceCommand.Execute();
+            unlockCommand = command;
+        }
+        
+        public void ExecuteDirectionCommand()
+        {
+            directionCommand.Execute();
+        }
+        
+        public void ExecuteUnlockCommand()
+        {
+            unlockCommand.Execute();
         }
     }
 }

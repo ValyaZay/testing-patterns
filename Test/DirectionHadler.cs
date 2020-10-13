@@ -2,7 +2,7 @@
 
 namespace Test
 {
-    public class Receiver
+    public class DirectionHadler
     {
         public void Go(string direction)
         {
