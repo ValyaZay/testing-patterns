@@ -1,8 +1,4 @@
-﻿using System;
-using System.IO.MemoryMappedFiles;
-using Test.Commands;
-
-namespace Test
+﻿namespace Test
 {
     class Program
     {
@@ -15,7 +11,8 @@ namespace Test
             IButton key = new KeyButton();
             IButton play = new PlayButton();
             
-            // consider this command set: right, right, up, up, left, key
+            // consider this command set: down, right, right, up, up, left, key
+            down.OnClick();
             right.OnClick();
             right.OnClick();
             up.OnClick();

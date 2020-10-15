@@ -1,12 +1,12 @@
-﻿using Test.Player;
+﻿using Test.Characters;
 
 namespace Test.Commands
 {
     public class RightCommand : ICommand
     {
-        public void Execute(Letter letter)
+        public void Execute(Player player)
         {
-            letter.GoRight();
+            player.GoRight();
         }
     }
 }

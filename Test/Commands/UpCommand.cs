@@ -1,12 +1,12 @@
-﻿using Test.Player;
+﻿using Test.Characters;
 
 namespace Test.Commands
 {
     public class UpCommand : ICommand
     {
-        public void Execute(Letter letter)
+        public void Execute(Player player)
         {
-            letter.GoUp();
+            player.GoUp();
         }
     }
 }

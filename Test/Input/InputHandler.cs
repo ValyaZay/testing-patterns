@@ -1,13 +1,13 @@
 ﻿using System.Collections.Generic;
+using Test.Characters;
 using Test.Commands;
-using Test.Player;
 
 namespace Test.Input
 {
     public class InputHandler
     {
         public static List<ICommand> commands = new List<ICommand>();
-        public Letter letter;
+        public Player player;
         public static void AddUpCommand() //onClick() up button on ui
         {
             commands.Add(new UpCommand());
@@ -30,13 +30,13 @@ namespace Test.Input
         
         public static void AddUnlockCommand() //onClick() key button on ui
         {
-            commands.Add(new UnlockCommand());
+            commands.Add(new KeyCommand());
         }
         
         public void Play() //onClick() play button on ui
         {
-            letter = new Letter();
-            commands.ForEach(c => c.Execute(letter));
+            player = new Player();
+            commands.ForEach(c => c.Execute(player));
         }
     }
 }

@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace Test.Player
+namespace Test.Characters
 {
-    public class Letter
+    public class Player
     {
         public void GoUp()
         {

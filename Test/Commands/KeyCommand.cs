@@ -2,11 +2,11 @@
 
 namespace Test.Commands
 {
-    public class DownCommand : ICommand
+    public class KeyCommand : ICommand
     {
         public void Execute(Player player)
         {
-            player.GoDown();
+            player.Unlock();
         }
     }
 }

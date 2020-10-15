@@ -1,9 +1,9 @@
-﻿using Test.Player;
+﻿using Test.Characters;
 
 namespace Test.Commands
 {
     public interface ICommand
     {
-        void Execute(Letter letter);
+        void Execute(Player player);
     }
 }
