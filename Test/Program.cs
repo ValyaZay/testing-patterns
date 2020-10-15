@@ -1,4 +1,6 @@
 ﻿using System;
+using System.IO.MemoryMappedFiles;
+using Test.Commands;
 
 namespace Test
 {
@@ -6,26 +8,23 @@ namespace Test
     {
         static void Main()
         {
-            string[] directions = {"up", "left", "unlock", "down", "right", "down", "unlock"};
-            Invoker invoker = new Invoker();
-            DirectionHadler directionHadler = new DirectionHadler();
-            UnlockHandler unlockHandler = new UnlockHandler();
-
-            invoker.SetUnlockCommand(new UnlockCommand(unlockHandler));
-
-            foreach (var direction in directions)
-            {
-                invoker.SetDirectionCommand(new DirectionCommand(directionHadler, direction));
-                if (direction == "unlock")
-                {
-                    invoker.ExecuteUnlockCommand();
-                }
-                else
-                {
-                    invoker.ExecuteDirectionCommand();
-                }
-                
-            }
+            IButton right = new RightButton();
+            IButton up = new UpButton();
+            IButton down = new DownButton();
+            IButton left = new LeftButton();
+            IButton key = new KeyButton();
+            IButton play = new PlayButton();
+            
+            // consider this command set: right, right, up, up, left, key
+            right.OnClick();
+            right.OnClick();
+            up.OnClick();
+            up.OnClick();
+            left.OnClick();
+            key.OnClick();
+            
+            // when set of commands is ready, click Play button
+            play.OnClick();
         }
     }
 }
